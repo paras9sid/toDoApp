@@ -1,7 +1,8 @@
-
+const mongoose = require('../config/mongoose');
 const ToDo = require('../models/taskSchema');
-var toDo =[];
-module.exports.createTask = function(req,res){
+
+module.exports.create = function(req,res){
+     
 
     // populating the db -- task added to db cretiong unique id for very task added
     ToDo.create({
@@ -15,7 +16,9 @@ module.exports.createTask = function(req,res){
         console.log('Task created successfully ',newTask); 
        
         // to see the added task on home browser page 
-        toDo.push(req.body);
+        // toDo.push(req.body);
+        
         return res.redirect('back');
     });
+
 }
