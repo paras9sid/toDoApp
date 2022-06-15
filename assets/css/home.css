@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+#page-heading{
+    text-align: center;
+    margin-top: 25px;
+    color:grey
+}
+
+#todo-list-container ul{
+    padding: 0;
+    list-style:none;
+}
+#todo-list-container,#todo-list-form{
+    margin-left: 30%;
+}
+ 
+.task{
+    padding: 3px 10px;
+    border: 1px solid white;
+    background-color: blue;
+    box-shadow: 1px 1px 1px 1px lightgrey;
+    color:white;
+    display: flex;
+    width: 55%;
+}
+
+.task .details {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.task .delete-button{
+    width: 10%;
+    padding: 3px;
+    text-align: center;
+    margin-top: 5px ;
+    
+
+}
+.task .delete-button a{
+    color: white;
+    background-color: red;
+    /* margin-left: 80%; */
+}
+
+.task p {
+    margin: 5px 0;
+}

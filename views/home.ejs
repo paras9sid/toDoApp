@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>
+            <%= locals.title %>
+        </title>
+        <script src="https://kit.fontawesome.com/67341297e3.js" crossorigin="anonymous"></script>
+
+        <!-- css ref at the end and rest above it for override purpose-->
+        <link rel="stylesheet" href="/css/home.css">
+    </head>
+    <body>
+        <!-- Main heading of the app -->
+        <h1 id="page-heading"><i class="fa-solid fa-clipboard-check"></i>&nbsp; To Do List </h1>
+
+       
+        <!-- form for adding task -->
+        <form id="todo-list-form" action="/create-task" method="post">
+            <label id="" for="description">Description</label>
+            <input type="text" name="description" placeholder="Enter Task!" required>
+
+            <label id="" for="date"></label>
+            <input type="date" name="date" required>
+
+            <button type ="submit" id="">Add Task</button>
+        </form>
+
+        <div id="todo-list-container">
+            <ul>
+                <!-- iterating all tasks in db -->
+                <% for ( let i of toDo_List) { %> 
+                    <li class="task">
+                        <div id="details">
+                            <p> <%= i.description %> &nbsp; <%= i.date %> </p>
+                        </div>
+
+                        <!-- deleting task by unique id from db -->
+                        <div class="delete-button">
+                            <a href="/delete-task/?id=<%= i.id %>">
+                                <i class="fa-solid fa-window-close"></i>&nbsp;
+                            </a>
+
+                        </div>
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+
+        <!-- it will be reflected in inpect-- console -->
+        <script type="text/javascript" src="/js/home.js"></script>
+
+    </body>
+</html>
